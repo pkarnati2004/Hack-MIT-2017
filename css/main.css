@@ -695,7 +695,10 @@ footer {
 /* Search Bar Style -------- */
 
 .search-bar {
-    padding: 20px 300px 20px 20px;
+    /* padding: 20px 300px 20px 20px; */
+    padding: 20px;
     margin-bottom: 50px;
+    width: 80%;
+    height: 40px;
     font-family: 'Raleway', sans-serif;
 }
