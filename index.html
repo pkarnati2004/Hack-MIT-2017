@@ -25,6 +25,8 @@
 
     <script src="js/modernizr-2.7.1.js"></script>
 
+    <script src="js/table.js"></script>
+
 </head>
 
 <body>
@@ -87,8 +89,9 @@
                 </div>
             </div> -->
 
-            <div class="row header-info">
-                <div class="col-xs-6 text-center">
+            <!-- <div class="row header-info"> -->
+            <div class="row">
+                <div style="margin-top: 20%" class="col-xs-6 text-center">
                     <input class="search-bar" type="text" name="search" placeholder="Song Keywords...">
                     <br />
                     <p class="lead wow fadeIn" data-wow-delay="0.5s">Search for a song</p>
@@ -101,7 +104,7 @@
                                     <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Search</a>
                                 </div>
                                 <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                                    <a href="#invite" class="btn btn-primary btn-lg scroll">Suggest</a>
+                                    <a href="#suggest" id="#suggest" class="btn btn-primary btn-lg scroll">Suggest</a>
                                 </div>
                             </div>
                         </div>
@@ -112,8 +115,31 @@
                         <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
                     </div> -->
                     <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
+                    <div class="col-md-12 column table-responsive">
+                        <table class="table table-sortable table-css" id="song-table">
+                            <!-- <thead>=
+                                <tr>
+                                    <th> Name</th>
+                                    <th> Love!</th>
+                                </tr>
+                            </thead> -->
+                            <tbody>
+                                <tr id='addr0' data-id="0">
+                                    <td data-name="name">
+                                        Song Name
+                                    </td>
+                                    <td data-name="vote">
+                                        <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
+                                        <!-- <button class="btn" id="1"> 1 </button> -->
+                                        <input onclick="value++" type="button" id="like-button" class="btn" value="1" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <!-- </div> -->
         </div>
     </header>
 
