@@ -690,3 +690,12 @@ footer {
 /* Large screens ----------- */
 
 @media (min-width: 1200px) and (max-width: 3000px) {}
+
+
+/* Search Bar Style -------- */
+
+.search-bar {
+    padding: 20px 300px 20px 20px;
+    margin-bottom: 50px;
+    font-family: 'Raleway', sans-serif;
+}
