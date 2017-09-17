@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    alert("Welcome to DJ Tung's!!! Search for a song and add it to the queue")
+    alert("WELCOME TO DJ TUNGS!")
     $("#suggest").on("click", function() {
         // Dynamic Rows Code
 
@@ -17,28 +17,36 @@ $(document).ready(function() {
             "data-id": newid
         });
 
-        // loop through each td and create new elements with name of newid
-        $.each($("#song-table tbody tr:nth(0) td"), function() {
-            var cur_td = $(this);
+        if (newid > 8) {
+            alert("Tooo many Suggestions!!!");
+        } else {
 
-            var children = cur_td.children();
+            // loop through each td and create new elements with name of newid
+            $.each($("#song-table tbody tr:nth(0) td"), function() {
+                var cur_td = $(this);
 
-            // add new td and element if it has a nane
-            if ($(this).data("name") != undefined) {
-                var td = $("<td></td>", {
-                    "data-name": $(cur_td).data("name")
-                });
+                var children = cur_td.children();
 
-                var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("");
-                c.attr("name", $(cur_td).data("name") + newid);
-                c.appendTo($(td));
-                td.appendTo($(tr));
-            } else {
-                var td = $("<td></td>", {
-                    'text': $('#song-table tr').length
-                }).appendTo($(tr));
-            }
-        });
+                // add new td and element if it has a nane
+                if ($(this).data("name") != undefined) {
+                    var td = $("<td></td>", {
+                        "data-name": $(cur_td).data("name")
+                    });
+                    if ($(td).data("name") == "name") {
+                        $(td).html($("#search-bar").val());
+                    }
+
+                    var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("1");
+                    // c.attr("name", $(cur_td).data("name") + newid);
+                    c.appendTo($(td));
+                    td.appendTo($(tr));
+                } else {
+                    var td = $("<td></td>", {
+                        'text': $('#song-table tr').length
+                    }).appendTo($(tr));
+                }
+            });
+        }
 
         // add delete button and td
         /*

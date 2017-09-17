@@ -92,7 +92,7 @@
             <!-- <div class="row header-info"> -->
             <div class="row">
                 <div style="margin-top: 20%" class="col-xs-6 text-center">
-                    <input class="search-bar" type="text" name="search" placeholder="Song Keywords...">
+                    <input class="search-bar" type="text" name="search" id="search-bar" placeholder="Song Keywords...">
                     <br />
                     <p class="lead wow fadeIn" data-wow-delay="0.5s">Search for a song</p>
                     <br />
@@ -111,7 +111,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-6 text-center">
+                <div class="col-xs-6 text-center" onload="makeTableScroll()">
                     <!-- <div class="text-center">
                         <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
                     </div> -->
