@@ -102,36 +102,42 @@
                                         Song Name
                                     </td>
                                     <td data-name="vote">
+
                                         <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
                                         <!-- <button class="btn" id="1"> 1 </button> -->
                                         <input type="button" id="like-button" class="btn" value="1" />
                                         <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
+                                        <input onclick="download_song(this);" type="button" id="download-song" class="btn" value="X" />
                                     </td>
                                 </tr>
                             </tbody>
                             <tbody>
-                                <tr id='addr1' data-id="1">
+                                <tr id='addr0' data-id="0">
                                     <td data-name="name">
                                         Song Name
                                     </td>
                                     <td data-name="vote">
+
                                         <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
                                         <!-- <button class="btn" id="1"> 1 </button> -->
                                         <input type="button" id="like-button" class="btn" value="1" />
                                         <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
+                                        <input onclick="download_song(this);" type="button" id="download-song" class="btn" value="X" />
                                     </td>
                                 </tr>
                             </tbody>
                             <tbody>
-                                <tr id='addr2' data-id="2">
+                                <tr id='addr0' data-id="0">
                                     <td data-name="name">
                                         Song Name
                                     </td>
                                     <td data-name="vote">
+
                                         <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
                                         <!-- <button class="btn" id="1"> 1 </button> -->
                                         <input type="button" id="like-button" class="btn" value="1" />
                                         <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
+                                        <input onclick="download_song(this);" type="button" id="download-song" class="btn" value="X" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -147,7 +153,17 @@
     <script>
         function delete_row(ele) {
             var row = ele.parentNode.parentNode;
-            row.parentNode.removeChild(row)
+            row.parentNode.removeChild(row);
+        }
+
+        function download_song(song) {
+          $.ajax({
+            type: "POST",
+            url: "~/app.py",
+            data: { "song_query": song}
+          }).done(function( o ) {
+             // do something
+          });
         }
 
         function populate_songs(file_name) {
@@ -194,7 +210,15 @@
                 input2.class = "btn";
                 input2.value = "X";
                 td.appendChild(input2);
-            }
+
+                var input3 = document.createElement("input");
+                input3.onclick = "download_song(this);";
+                input3.type = "button";
+                input3.id = "download_song";
+                input3.class = "btn";
+                input3.value = "D";
+                td.appendChild(input3);
+          }
         }
     </script>
 
