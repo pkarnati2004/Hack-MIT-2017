@@ -107,7 +107,7 @@
                                         <!-- <button class="btn" id="1"> 1 </button> -->
                                         <input type="button" id="like-button" class="btn" value="1" />
                                         <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
-                                        <input onclick="download_song(this);" type="button" id="download-song" class="btn" value="X" />
+                                        <input onclick="download_song(this);" type="button" id="download-song" class="btn" value="->" />
                                     </td>
                                 </tr>
                             </tbody>
@@ -166,60 +166,60 @@
           });
         }
 
-        function populate_songs(file_name) {
-            var fs = require("fs");
-            var text = fs.readFileSync(file_name).toString('utf-8');
-            var song_data = text.split("\n");
-
-            var song_table = document.getElementById("song-table");
-            var para = document.createElement("p");
-            var node = document.createTextNode("This is new.");
-            para.appendChild(node);
-
-            row = 0;
-            for (String s: song_data) {
-                String[] song_likes = s.spit(",");
-
-                var tbody = document.createElement("tbody");
-
-                var tr = document.createElement("tr");
-                tr.id = 'addr' + String(row);
-                tr.data - id = String(row);
-                tbody.appendChild(tr);
-
-                var td1 = document.createElement("td");
-                td1.data - name = "name";
-                td1.text = song_likes[0];
-                tr.appendChild(td1);
-
-                var td2 = document.createElement("td");
-                td2.data - name = "vote";
-                tr.appendChild(td2);
-
-                var input1 = document.createElement("input");
-                input1.type = "button";
-                input1.id = "like-button";
-                input1.class = "btn";
-                input1.value = "1";
-                td.appendChild(input1);
-
-                var input2 = document.createElement("input");
-                input2.onclick = "delete_row(this);";
-                input2.type = "button";
-                input2.id = "delete-row-button";
-                input2.class = "btn";
-                input2.value = "X";
-                td.appendChild(input2);
-
-                var input3 = document.createElement("input");
-                input3.onclick = "download_song(this);";
-                input3.type = "button";
-                input3.id = "download_song";
-                input3.class = "btn";
-                input3.value = "D";
-                td.appendChild(input3);
-          }
-        }
+        // function populate_songs(file_name) {
+        //     var fs = require("fs");
+        //     var text = fs.readFileSync(file_name).toString('utf-8');
+        //     String[] song_data = text.split("\n");
+        //
+        //     var song_table = document.getElementById("song-table");
+        //     var para = document.createElement("p");
+        //     var node = document.createTextNode("This is new.");
+        //     para.appendChild(node);
+        //
+        //     row = 0;
+        //     for (String s: song_data) {
+        //         String[] song_likes = s.spit(",");
+        //
+        //         var tbody = document.createElement("tbody");
+        //
+        //         var tr = document.createElement("tr");
+        //         tr.id = 'addr' + String(row);
+        //         tr.data - id = String(row);
+        //         tbody.appendChild(tr);
+        //
+        //         var td1 = document.createElement("td");
+        //         td1.data - name = "name";
+        //         td1.text = song_likes[0];
+        //         tr.appendChild(td1);
+        //
+        //         var td2 = document.createElement("td");
+        //         td2.data - name = "vote";
+        //         tr.appendChild(td2);
+        //
+        //         var input1 = document.createElement("input");
+        //         input1.type = "button";
+        //         input1.id = "like-button";
+        //         input1.class = "btn";
+        //         input1.value = "1";
+        //         td.appendChild(input1);
+        //
+        //         var input2 = document.createElement("input");
+        //         input2.onclick = "delete_row(this);";
+        //         input2.type = "button";
+        //         input2.id = "delete-row-button";
+        //         input2.class = "btn";
+        //         input2.value = "X";
+        //         td.appendChild(input2);
+        //
+        //         var input3 = document.createElement("input");
+        //         input3.onclick = "download_song(this);";
+        //         input3.type = "button";
+        //         input3.id = "download_song";
+        //         input3.class = "btn";
+        //         input3.value = "->";
+        //         td.appendChild(input3);
+        //   }
+        // }
     </script>
 
     <!--
