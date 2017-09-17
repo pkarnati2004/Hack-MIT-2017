@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>What To Be Sung with DJ TUNG</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/modernizr-2.7.1.js"></script>
+
+    <script src="js/table.js"></script>
+</head>
+<body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html" class="scroll">Search</a></li>
+                    <!-- <li><a href="#">Sign in</a></li> -->
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6">
+                    <!-- <a href="index.html"><img src="img/logo.svg" alt="Logo"></a> -->
+                    <a href="index.html">
+                        <h4 style="padding-top: 20px; color: white;">What Wants to be Sung with DJ Tung </h4>
+                    </a>
+                </div>
+            </div>
+
+            <!-- <div class="row header-info">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h1 class="wow fadeIn">Choose Your Song</h1>
+                    <input class="search-bar" type="text" name="search" placeholder="Song Keywords...">
+                    <br />
+                    <p class="lead wow fadeIn" data-wow-delay="0.5s">Search for a song</p>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                            <div class="row">
+                                <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
+                                    <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Search</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row header-info">
+                <div class="text-center">
+                    <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
+                </div>
+            </div> -->
+
+            <!-- <div class="row header-info"> -->
+            <div class="row">
+                <div class="col-xs-6 text-center">
+                    <!-- <div class="text-center">
+                        <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
+                    </div> -->
+                    <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
+                    <div class="col-md-12 column table-responsive">
+                        <table class="table table-sortable table-css" id="song-table">
+                            <tbody>
+                                <tr id='addr0' data-id="0">
+                                    <td data-name="name">
+                                        Song Name
+                                    </td>
+                                    <td data-name="vote">
+                                        <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
+                                        <!-- <button class="btn" id="1"> 1 </button> -->
+                                        <input type="button" id="like-button" class="btn" value="1" />
+                                        <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr id='addr1' data-id="1">
+                                    <td data-name="name">
+                                        Song Name
+                                    </td>
+                                    <td data-name="vote">
+                                        <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
+                                        <!-- <button class="btn" id="1"> 1 </button> -->
+                                        <input type="button" id="like-button" class="btn" value="1" />
+                                        <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr id='addr2' data-id="2">
+                                    <td data-name="name">
+                                        Song Name
+                                    </td>
+                                    <td data-name="vote">
+                                        <!-- <button class="btn"> <i class="fa fa-thumbs-up" aria-hidden="true"></i> </button> -->
+                                        <!-- <button class="btn" id="1"> 1 </button> -->
+                                        <input type="button" id="like-button" class="btn" value="1" />
+                                        <input onclick="delete_row(this);" type="button" id="delete-row-button" class="btn" value="X" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <img src="http://www.descargardjvirtual.com/wp-content/uploads/2012/06/rre.jpg" width="50vw">
+            </div>
+            <!-- </div> -->
+        </div>
+    </header>
+
+    <script>
+      function delete_row(ele) {
+        var row = ele.parentNode.parentNode;
+        row.parentNode.removeChild(row)
+      }
+
+      function populate_songs(file_name) {
+        var fs = require("fs");
+        var text = fs.readFileSync(file_name).toString('utf-8');
+        var song_data = text.split("\n");
+
+        var song_table = document.getElementById("song-table");
+        var para = document.createElement("p");
+        var node = document.createTextNode("This is new.");
+        para.appendChild(node);
+
+        row = 0;
+        for (String s : song_data) {
+          String[] song_likes = s.spit(",");
+
+          var tbody = document.createElement("tbody");
+
+          var tr = document.createElement("tr");
+          tr.id = 'addr' + String(row);
+          tr.data-id = String(row);
+          tbody.appendChild(tr);
+
+          var td1 = document.createElement("td");
+          td1.data-name = "name";
+          td1.text = song_likes[0];
+          tr.appendChild(td1);
+
+          var td2 = document.createElement("td");
+          td2.data-name = "vote";
+          tr.appendChild(td2);
+
+          var input1 = document.createElement("input");
+          input1.type = "button";
+          input1.id = "like-button";
+          input1.class = "btn";
+          input1.value = "1";
+          td.appendChild(input1);
+
+          var input2 = document.createElement("input");
+          input2.onclick = "delete_row(this);";
+          input2.type = "button";
+          input2.id = "delete-row-button";
+          input2.class = "btn";
+          input2.value = "X";
+          td.appendChild(input2);
+        }
+      }
+    </script>
+
+    <!--
+    <section id="be-the-first" class="pad-xl">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
+                    <h2>Be the first</h2>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipis.</p>
+                </div>
+            </div>
+
+            <div class="iphone wow fadeInUp" data-wow-delay="1s">
+                <img src="img/iphone.png">
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section id="invite" class="pad-lg light-gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <i class="fa fa-envelope-o margin-40"></i>
+                    <h2 class="black">Get the invite</h2>
+                    <br />
+                    <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.</p>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <form role="form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg">Request Invite</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-8 margin-20">
+                    <ul class="list-inline social">
+                        <li>Connect with us on</li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+
+                <div class="col-sm-4 text-right">
+                    <p><small>Copyright &copy; 2017. All rights reserved. <br>
+	            Created at Hack-MIT</small></p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+    </script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+</body>
+
+</html>
