@@ -32,8 +32,14 @@ $(document).ready(function() {
                     var td = $("<td></td>", {
                         "data-name": $(cur_td).data("name")
                     });
+                    // if ($(td).data("name") == "name") {
+                    //     $(td).html($("#search-bar").val());
+                    // }
                     if ($(td).data("name") == "name") {
-                        $(td).html($("#search-bar").val());
+                        $.get('/suggest', function(data) {
+                            alert(data)
+                            $(td).html(data.result[0]);
+                        });
                     }
 
                     var c = $(cur_td).find($(children[0]).prop('tagName')).clone().val("1");

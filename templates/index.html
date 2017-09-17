@@ -15,42 +15,30 @@
     <meta property="og:description" content="">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <!-- <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/animate.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}">
+
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700' rel='stylesheet' type='text/css'>
 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+
 
     <script src="js/modernizr-2.7.1.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/table.js"></script>
+    <!-- <script type="text/javascript" src="js/table.js"></script> -->
+    <script type="text/javascript" src="{{url_for('static', filename='table.js')}}"></script>
 
 </head>
 
 <body>
 
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-                <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html" class="scroll">Search</a></li>
-                    <!-- <li><a href="#">Sign in</a></li> -->
-                </ul>
-            </div>
-            <!--/.navbar-collapse -->
-        </div>
-    </div>
 
     <header>
         <div class="container">
@@ -62,32 +50,6 @@
                     </a>
                 </div>
             </div>
-
-            <!-- <div class="row header-info">
-                <div class="col-sm-10 col-sm-offset-1 text-center">
-                    <h1 class="wow fadeIn">Choose Your Song</h1>
-                    <input class="search-bar" type="text" name="search" placeholder="Song Keywords...">
-                    <br />
-                    <p class="lead wow fadeIn" data-wow-delay="0.5s">Search for a song</p>
-                    <br />
-
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
-                            <div class="row">
-                                <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                                    <a href="#be-the-first" class="btn btn-secondary btn-lg scroll">Search</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row header-info">
-                <div class="text-center">
-                    <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
-                </div>
-            </div> -->
 
             <!-- <div class="row header-info"> -->
             <div class="row">
@@ -147,48 +109,6 @@
     <div class="mouse-icon hidden-xs">
         <div class="scroll"></div>
     </div>
-    <!-- 
-    <section id="be-the-first" class="pad-xl">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
-                    <h2>Be the first</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipis.</p>
-                </div>
-            </div>
-
-            <div class="iphone wow fadeInUp" data-wow-delay="1s">
-                <img src="img/iphone.png">
-            </div>
-        </div>
-    </section> -->
-
-    <!-- <section id="invite" class="pad-lg light-gray-bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-sm-offset-2 text-center">
-                    <i class="fa fa-envelope-o margin-40"></i>
-                    <h2 class="black">Get the invite</h2>
-                    <br />
-                    <p class="black">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra orci ut.</p>
-                    <br />
-
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-                            <form role="form">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Email">
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg">Request Invite</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-
-                </div>
-            </div>
-        </div>
-    </section> -->
 
     <footer>
         <div class="container">
