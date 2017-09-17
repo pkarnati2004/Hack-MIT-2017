@@ -26,6 +26,7 @@
 
     <script src="js/table.js"></script>
 </head>
+
 <body>
 
 
@@ -88,7 +89,7 @@
 
             <!-- <div class="row header-info"> -->
             <div class="row">
-                <div class="col-xs-6 text-center">
+                <div class="text-center">
                     <!-- <div class="text-center">
                         <p class="lead wow fadeIn" data-wow-delay="0.75"> Current Queue</p>
                     </div> -->
@@ -144,57 +145,57 @@
     </header>
 
     <script>
-      function delete_row(ele) {
-        var row = ele.parentNode.parentNode;
-        row.parentNode.removeChild(row)
-      }
-
-      function populate_songs(file_name) {
-        var fs = require("fs");
-        var text = fs.readFileSync(file_name).toString('utf-8');
-        var song_data = text.split("\n");
-
-        var song_table = document.getElementById("song-table");
-        var para = document.createElement("p");
-        var node = document.createTextNode("This is new.");
-        para.appendChild(node);
-
-        row = 0;
-        for (String s : song_data) {
-          String[] song_likes = s.spit(",");
-
-          var tbody = document.createElement("tbody");
-
-          var tr = document.createElement("tr");
-          tr.id = 'addr' + String(row);
-          tr.data-id = String(row);
-          tbody.appendChild(tr);
-
-          var td1 = document.createElement("td");
-          td1.data-name = "name";
-          td1.text = song_likes[0];
-          tr.appendChild(td1);
-
-          var td2 = document.createElement("td");
-          td2.data-name = "vote";
-          tr.appendChild(td2);
-
-          var input1 = document.createElement("input");
-          input1.type = "button";
-          input1.id = "like-button";
-          input1.class = "btn";
-          input1.value = "1";
-          td.appendChild(input1);
-
-          var input2 = document.createElement("input");
-          input2.onclick = "delete_row(this);";
-          input2.type = "button";
-          input2.id = "delete-row-button";
-          input2.class = "btn";
-          input2.value = "X";
-          td.appendChild(input2);
+        function delete_row(ele) {
+            var row = ele.parentNode.parentNode;
+            row.parentNode.removeChild(row)
         }
-      }
+
+        function populate_songs(file_name) {
+            var fs = require("fs");
+            var text = fs.readFileSync(file_name).toString('utf-8');
+            var song_data = text.split("\n");
+
+            var song_table = document.getElementById("song-table");
+            var para = document.createElement("p");
+            var node = document.createTextNode("This is new.");
+            para.appendChild(node);
+
+            row = 0;
+            for (String s: song_data) {
+                String[] song_likes = s.spit(",");
+
+                var tbody = document.createElement("tbody");
+
+                var tr = document.createElement("tr");
+                tr.id = 'addr' + String(row);
+                tr.data - id = String(row);
+                tbody.appendChild(tr);
+
+                var td1 = document.createElement("td");
+                td1.data - name = "name";
+                td1.text = song_likes[0];
+                tr.appendChild(td1);
+
+                var td2 = document.createElement("td");
+                td2.data - name = "vote";
+                tr.appendChild(td2);
+
+                var input1 = document.createElement("input");
+                input1.type = "button";
+                input1.id = "like-button";
+                input1.class = "btn";
+                input1.value = "1";
+                td.appendChild(input1);
+
+                var input2 = document.createElement("input");
+                input2.onclick = "delete_row(this);";
+                input2.type = "button";
+                input2.id = "delete-row-button";
+                input2.class = "btn";
+                input2.value = "X";
+                td.appendChild(input2);
+            }
+        }
     </script>
 
     <!--
